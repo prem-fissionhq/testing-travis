@@ -2,3 +2,5 @@ jobs:
   include:
     - stage: test
       script: "echo hi"
+    - stage: building
+      script: "echo this is building stage"
