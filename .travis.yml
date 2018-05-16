@@ -1,6 +1,10 @@
-jobs:
-  include:
-    - stage: test
-      script: "echo hi"
-    - stage: building
-      script: "echo this is building stage"
+sudo: false
+language: python
+python:
+  - 2.7
+
+install:
+  - pip install flask
+
+script:
+  - python tests.py
