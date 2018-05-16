@@ -8,5 +8,4 @@ jobs:
     - stage: first
       script: python test.py
     - stage: install
-      install:
-        - pip install flask
+      script: "echo hi"
