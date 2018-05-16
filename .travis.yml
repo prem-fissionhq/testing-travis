@@ -3,8 +3,10 @@ language: python
 python:
   - 2.7
 
-install:
-  - pip install flask
-
-script:
-  - python test.py
+jobs:
+  include:
+    - stage: first
+      script: python test.py
+    - stage: install
+      install:
+        - pip install flask
