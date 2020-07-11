@@ -1,11 +1,11 @@
-sudo: false
-language: python
-python:
-  - 2.7
+dist: trusty
 
 jobs:
   include:
-    - stage: first
-      script: python test.py
-    - stage: install
-      script: "echo hi"
+    - stage: build Nginx docker image
+      script:
+      - docker build -t mynginx:latest .
+      - docker images
+    - stage: test
+      script: docker run --rm mynginx:latest "service nginx start"
+    - script: docker run --rm mynginx:latest "curl http://localhost"
